@@ -1,0 +1,453 @@
+<html><head><style>/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border-left: 6px solid #1e90ff; /* Blue accent */
+}
+
+/* Titles (Main Headers) */
+h1 {
+    font-size: 2.4em; /* Larger font size */
+    color: #1e90ff; /* Dodger blue */
+    border-bottom: 3px solid #87cefa; /* Sky blue underline */
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Uppercase styling */
+    font-weight: bold;
+}
+
+/* Subtitles */
+h2 {
+    font-size: 1.8em; /* Larger subtitle font */
+    color: #1e90ff; /* Dodger blue */
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Uppercase styling */
+    font-weight: bold;
+    border-bottom: 2px solid #87cefa; /* Sky blue underline */
+    padding-bottom: 5px;
+}
+
+/* Paragraphs */
+p {
+    margin: 10px 0;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Lists */
+ul {
+    margin: 15px 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+li {
+    margin: 5px 0;
+    padding: 5px;
+    border-left: 3px solid #87cefa; /* Sky blue marker */
+    padding-left: 10px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #f8faff; /* Slight blue tint */
+}
+
+th, td {
+    border: 1px solid #d0e7ff; /* Light blue border */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #1e90ff; /* Blue header */
+    color: #fff;
+    font-weight: bold;
+}
+
+td {
+    color: #333;
+}
+
+/* Links */
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #104e8b; /* Darker blue */
+}
+
+/* HR Styling */
+hr {
+    border: 1px solid #87cefa; /* Sky blue line */
+    margin: 20px 0;
+}
+
+/* Preformatted Text and Code Blocks */
+pre, code {
+    background: #e6f2ff; /* Very light blue */
+    color: #104e8b; /* Dark blue */
+    padding: 10px;
+    border: 1px solid #87cefa;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+/* Zones (Custom Styling for Sections) */
+.zone {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f0faff; /* Subtle blue */
+    border: 2px dashed #87cefa;
+    border-radius: 8px;
+}
+
+.zone-title {
+    font-size: 1.6em; /* Larger font size */
+    font-weight: bold;
+    color: #1e90ff;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Uppercase styling */
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Buttons (Optional Add-On) */
+button {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #104e8b;
+}
+</style></head><body><h1 id="-1-vis-o-geral-do-servidor-"><strong>1.</strong>   <strong>Visão Geral do Servidor</strong></h1>
+<ul>
+<li><strong>Nome do Servidor</strong>: server20242</li>
+<li><strong>Sistema Operacional</strong>: Ubuntu Server 24.11</li>
+<li><strong>IP do Servidor</strong>: 192.168.3.39</li>
+<li><p><strong>Funções Principais</strong>:</p>
+</li>
+<li><p>Servidor DNS (com bloqueio de domínios)</p>
+</li>
+<li>Servidor Proxy (Squid)</li>
+<li>Roteador de Internet</li>
+<li><p>Servidor Web Interno (Apache)</p>
+</li>
+<li><p><strong>Localização Física</strong>: Rua Dinamarca 23 Vila Santa Isabel</p>
+</li>
+<li><strong>Administrador de Rede</strong>: Mauro Junior</li>
+<li><strong>Cliente</strong>: Burlesco</li>
+</ul>
+<h1 id="-2-especifica-es-de-hardware-e-interfaces-de-rede-"><strong>2.</strong>   <strong>Especificações de Hardware e Interfaces de Rede</strong></h1>
+<ul>
+<li><strong>Processador</strong>: Ryzen 5600G</li>
+<li><strong>Memória RAM</strong>: 2048 MB | 2GB</li>
+<li><strong>Armazenamento</strong>: 25GB</li>
+<li><p><strong>Interfaces de Rede</strong>:</p>
+</li>
+<li><p>enp0s3: Conectada à internet (WAN)</p>
+</li>
+<li>enp0s8: Rede interna (LAN)</li>
+</ul>
+<hr>
+<h1 id="-3-configura-o-de-rede-"><strong>3.</strong>   <strong>Configuração de Rede</strong></h1>
+<h2 id="-3-1-par-metros-de-rede-"><strong>3.1.</strong> <strong>Parâmetros de Rede</strong></h2>
+<ul>
+<li><strong>Encaminhamento de Pacotes (IP Forwarding)</strong></li>
+<li><strong>NAT</strong>: Configurado com <strong>iptables</strong> para mascarar a rede interna e permitir o acesso à Internet.</li>
+</ul>
+<h2 id="-3-2-configura-o-do-dhcp-"><strong>3.2.</strong> <strong>Configuração do DHCP</strong></h2>
+<ul>
+<li><strong>Software Utilizado</strong>: ISC DHCP Server</li>
+<li><p><strong>Configuração do Escopo DHCP</strong>:</p>
+</li>
+<li><p><strong>Faixa de IPs</strong>: 10.0.0.30 a 10.0.0.120</p>
+</li>
+<li><strong>Gateway (Roteador)</strong>: 192.168.3.39</li>
+<li><strong>Servidores DNS</strong>: 192.168.3.39 (primário)</li>
+</ul>
+<hr>
+<h1 id="-4-configura-o-do-servidor-dns-"><strong>4.</strong>   <strong>Configuração do Servidor DNS</strong></h1>
+<ul>
+<li><strong>Software Utilizado</strong>: BIND9</li>
+<li><p><strong>Configurações de Zonas</strong>:</p>
+</li>
+<li><p><strong>Domínios Bloqueados</strong>:</p>
+</li>
+<li><p>youtube.com</p>
+</li>
+<li><p>globo.com.br</p>
+</li>
+<li><p><strong>Domínios Internos</strong>:</p>
+</li>
+<li><p>maurojr.gabrielmelo.com/</p>
+</li>
+</ul>
+<p>Exemplo de configuração de zona em /etc/bind/named.conf.local:</p>
+<p>zone &quot;youtube.com&quot; {</p>
+<pre><code>type master<span class="hljs-comment">;</span>
+
+file <span class="hljs-string">"/etc/bind/db.blocked"</span><span class="hljs-comment">;</span>
+</code></pre><p>};</p>
+<p>zone &quot; <a href="http://maurojr.gabrielmelo.com/">http://maurojr.gabrielmelo.com/</a>&quot; {</p>
+<pre><code>type master<span class="hljs-comment">;</span>
+
+file <span class="hljs-string">"/etc/bind/db.maurojr.gabrielmelo"</span><span class="hljs-comment">;</span>
+</code></pre><p>};</p>
+<ul>
+<li><strong>Arquivos de Zona</strong>: Descreva onde ficam armazenados e o conteúdo base para o redirecionamento dos domínios internos e bloqueados.</li>
+</ul>
+<hr>
+<h1 id="-5-configura-o-do-servidor-proxy-squid-"><strong>5.</strong>   <strong>Configuração do Servidor Proxy (Squid)</strong></h1>
+<ul>
+<li><strong>Software Utilizado</strong>: Squid</li>
+<li><strong>Porta do Proxy</strong>: 3128</li>
+<li><p><strong>Regras de Controle de Acesso (ACLs)</strong>:</p>
+</li>
+<li><p><strong>Rede Permitida</strong>: 10.0.0.0/24</p>
+</li>
+<li><strong>Sites Bloqueados</strong>: /etc/squid/bloqueados.txt (domínios bloqueados)</li>
+</ul>
+<p>Exemplo de configuração no arquivo /etc/squid/squid.conf:</p>
+<p>http_port 3128</p>
+<p>acl rede_local src 10.0.0.0/24</p>
+<p>http_access allow rede_local</p>
+<p>acl sites_bloqueados dstdomain &quot;/etc/squid/bloqueados.txt&quot;</p>
+<p>http_access deny sites_bloqueados</p>
+<ul>
+<li><p><strong>Logs do Squid</strong>: /var/log/squid/access.log (para monitoramento de acessos)</p>
+<img src="Pasted image 20241209211028.png">
+<img src="Pasted image 20241209211020.png">
+<img src="Pasted image 20241209211047.png">
+<img src="Pasted image 20241209211101.png">
+<h1 id="-6-configura-o-do-servidor-web-interno-apache-"><strong>6.</strong>   <strong>Configuração do Servidor Web Interno (Apache)</strong></h1>
+</li>
+<li><p><strong>Software Utilizado</strong>: Apache2</p>
+</li>
+<li><strong>Porta do Servidor Web</strong>: 80</li>
+<li><p><strong>Domínios Internos</strong>:</p>
+</li>
+<li><p><a href="http://maurojr.gabrielmelo.com/">http://maurojr.gabrielmelo.com/</a></p>
+</li>
+</ul>
+<img src="Pasted image 20241209203008.png">
+<hr>
+<h1 id="-7-monitoramento-e-manuten-o-"><strong>7.</strong>   <strong>Monitoramento e Manutenção</strong></h1>
+<ul>
+<li><p><strong>Monitoramento</strong>:</p>
+</li>
+<li><p>Utilize ferramentas como netstat, iftop, e htop para monitoramento em tempo real de tráfego e desempenho.</p>
+</li>
+<li><p><strong>Logs</strong>:</p>
+</li>
+<li><p>Squid: /var/log/squid/access.log</p>
+</li>
+<li><p>BIND: /var/log/syslog (procure por mensagens relacionadas ao BIND)</p>
+</li>
+<li><p><strong>Procedimento de Manutenção</strong>:</p>
+</li>
+<li><p>Atualizar pacotes regularmente com sudo apt update &amp;&amp; sudo apt upgrade</p>
+</li>
+<li>Reiniciar serviços após alterações de configuração (Squid, BIND, DHCP, Apache)</li>
+<li>Verificar permissões e acesso ao servidor periodicamente.</li>
+</ul>
+<hr>
+<h1 id="-8-configura-o-do-dns-bind9-"><strong>8.</strong>   <strong>Configuração do DNS (Bind9)</strong></h1>
+<h2 id="-8-1-zonas-"><strong>8.1.</strong>   <strong>Zonas</strong></h2>
+<img src="Pasted image 20241209202654.png">
+<h2 id="-8-2-db-maurojuior-gabrielmelo-com-"><strong>8.2.</strong>   <strong>Db.maurojuior.gabrielmelo.com</strong></h2>
+<img src="Pasted image 20241209202615.png">
+<h2 id="-8-3-db-blocked-"><strong>8.3.</strong>   <strong>Db.blocked</strong></h2>
+<img src="Pasted image 20241209202557.png">
+<h2 id="-8-4-named-conf-options-"><strong>8.4.</strong>   <strong>Named.conf.options</strong></h2>
+<img src="Pasted image 20241209202446.png">
+<h2 id="-8-5-dhcp-conf-"><strong>8.5.</strong>   <strong>Dhcp.conf</strong></h2>
+<img src="Pasted image 20241209211450.png">
+<h1 id="9-estrutura-e-topologia-da-rede-">9. <strong>Estrutura e Topologia da Rede</strong></h1>
+<ul>
+<li><strong>Topologia</strong>: <strong>Estrela</strong>, por ser eficiente, confiável e facilitar a manutenção.</li>
+<li><strong>Rede Física</strong>:<ul>
+<li>Um servidor com duas portas de rede.</li>
+<li>Switches para conectar os computadores e outros dispositivos.</li>
+</ul>
+</li>
+<li><p><strong>Distribuição</strong>: Divisão em sub-redes para organização e desempenho (ex: setor de desenvolvimento, administração, e teste).</p>
+</li>
+<li><p>Topografia logica
+<img src="Pasted image 20241212153008.png">
+</li>
+<li><p>Topografia fisica</p>
+<img src="Pasted image 20241212160914.png">
+<h1 id="10-componentes-necess-rios-">10. <strong>Componentes Necessários</strong></h1>
+<h4 id="-10-1-servidor-dhcp-e-controle-de-acesso-"><strong>10.1. Servidor DHCP e Controle de Acesso</strong></h4>
+</li>
+<li><p><strong>Servidor</strong>:</p>
+<ul>
+<li>Um servidor com especificações robustas (Ex: Processador Intel Xeon, 32 GB de RAM, 1 TB SSD).</li>
+<li>Sistema Operacional: Linux (ex: Ubuntu Server) ou Windows Server.</li>
+<li>Configuração DHCP para fornecer IPs automaticamente.</li>
+<li>Configuração para bloqueio de sites via firewall ou proxy (ex: pfSense ou Squid Proxy).</li>
+</ul>
+</li>
+</ul>
+<h4 id="10-2-switches-">10.2. <strong>Switches</strong></h4>
+<ul>
+<li><strong>Quantidade e Capacidade</strong>:<ul>
+<li>1 switches gerenciáveis de 48 portas Gigabit Ethernet para os computadores e dispositivos adicionais.</li>
+<li>1 switch de 24 portas.</li>
+</ul>
+</li>
+</ul>
+<h4 id="10-3-cabos-de-rede-">10.3. <strong>Cabos de Rede</strong></h4>
+<ul>
+<li><strong>Tipo de Cabo</strong>: Categoria 6 (Cat6) para garantir velocidades de até 1 Gbps.<ul>
+<li>Comprimento médio por cabo: 10 metros.</li>
+<li>Quantidade: 70 cabos (incluindo sobressalentes).</li>
+</ul>
+</li>
+</ul>
+<h4 id="10-4-roteador-">10.4. <strong>Roteador</strong></h4>
+<ul>
+<li>Roteador principal com suporte a VLANs e bloqueio de sites integrado.</li>
+</ul>
+<h4 id="10-5-patch-panel-e-rack-">10.5. <strong>Patch Panel e Rack</strong></h4>
+<ul>
+<li>Patch panels para organização dos cabos (48 portas).</li>
+<li>Rack de 12U para abrigar switches, patch panels e servidor.</li>
+</ul>
+<h4 id="10-6-ponto-de-acesso-wireless-">10.6. <strong>Ponto de Acesso Wireless</strong></h4>
+<ul>
+<li>Para dispositivos móveis e notebooks.</li>
+<li>Access Points compatíveis com Wi-Fi 6 (2 unidades).</li>
+</ul>
+<h1 id="11-configura-o-da-rede-">11.  <strong>Configuração da Rede</strong></h1>
+<ul>
+<li><p><strong>Servidor</strong>:</p>
+<ul>
+<li>Porta 1: Entrada de rede para conexão ao roteador.</li>
+<li>Porta 2: Conexão direta ao switch principal.</li>
+</ul>
+</li>
+<li><strong>Switches</strong>:<ul>
+<li>Switch 1 conectado diretamente ao servidor.</li>
+<li>Switch 2 conectado ao Switch 1 para extensão da rede.</li>
+</ul>
+</li>
+<li><strong>Rede Local</strong>:<ul>
+<li>Configuração de VLANs para segmentar setores.</li>
+<li>DHCP fornecendo IPs dentro do range de sub-rede</li>
+</ul>
+</li>
+<li><p><strong>Segurança e Bloqueios</strong>:</p>
+<ul>
+<li>Uso de pfSense para bloquear YouTube e Globo.</li>
+<li>Firewall configurado para permitir apenas tráfego autorizado.<h1 id="12-c-lculo-de-custos-estimativa-">12. <strong>Cálculo de Custos (Estimativa)</strong></h1>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Item</strong></th>
+<th><strong>Quantidade</strong></th>
+<th><strong>Preço Unitário</strong></th>
+<th><strong>Subtotal</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ServidorDHCP  (hardware)</td>
+<td>1</td>
+<td>3,200,00</td>
+<td>3,200,00</td>
+</tr>
+<tr>
+<td>Cabos Cat6 (10m)</td>
+<td>70</td>
+<td>25</td>
+<td>1.750,00</td>
+</tr>
+<tr>
+<td>Patch Panel</td>
+<td>2</td>
+<td>200</td>
+<td>400,00</td>
+</tr>
+<tr>
+<td>Rack 12U</td>
+<td>1</td>
+<td>800</td>
+<td>800,00</td>
+</tr>
+<tr>
+<td>Access Points (Wi-Fi 6)</td>
+<td>2</td>
+<td>1.200,00</td>
+<td>2.400,00</td>
+</tr>
+<tr>
+<td>Roteador Gerenciável</td>
+<td>1</td>
+<td>1.000,00</td>
+<td>1.000,00</td>
+</tr>
+<tr>
+<td>Software Firewall</td>
+<td>Licença</td>
+<td>0,00 (Open Source)</td>
+<td>0,00</td>
+</tr>
+<tr>
+<td>Switch (24 Portas)</td>
+<td>1</td>
+<td>2600</td>
+<td>2600</td>
+</tr>
+<tr>
+<td>Switch (48 Portas)</td>
+<td>1</td>
+<td>4500</td>
+<td>4500</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>-</td>
+<td>-</td>
+<td>R$  16.650,00</td>
+</tr>
+</tbody>
+</table>
+</body></html>
